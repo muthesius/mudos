@@ -4,9 +4,9 @@
     value=aufgabenText}}
 
 <ul>
-{{#each model as |aufgabe|}}
-    {{#unless aufgabe.done}}
+{{#each model.offene as |aufgabe|}}
+    {{#liquid-unless aufgabe.done class="task"}}
     <li {{action "erledigen" aufgabe}}>{{aufgabe.title}}</li>
-    {{/unless}}
+    {{/liquid-unless}}
 {{/each}}
 </ul>

@@ -1,8 +1,8 @@
 {{!-- model din die aufgaben der application--}}
 <ul>
-    {{#each model as |aufgabe|}}
-        {{#if aufgabe.done}}
+    {{#each model.erledigte as |aufgabe|}}
+        {{#liquid-if aufgabe.done class="task"}}
             <li class="done" {{action "reset" aufgabe}}>{{aufgabe.title}}</li>
-        {{/if}}
+        {{/liquid-if}}
     {{/each}}
 </ul>

@@ -10,18 +10,18 @@ export default Ember.Controller.extend({
                 return;
             }
 
-            const model = this.get('model');
-            let aufgabe = Ember.Object.create({
+            let aufgabe = this.store.createRecord('mudo', {
                 title: title,
                 done: false
             });
-            model.unshiftObject(aufgabe);
+            aufgabe.save();
 
             this.set('aufgabenText', null);
         },
 
         erledigen(aufgabe) {
             aufgabe.set('done', true);
+            aufgabe.save();
         }
     }
 });

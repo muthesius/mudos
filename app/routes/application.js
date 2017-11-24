@@ -1,9 +1,10 @@
 import Ember from 'ember';
 
-const aufgaben = [];
-
 export default Ember.Route.extend({
    model() {
-       return aufgaben;
+       return Ember.RSVP.hash({
+           offene: this.store.query('mudo', {filter: { done: false}}),
+           erledigte: this.store.query('mudo', {filter: { done: true}})
+       })
    } 
 });
