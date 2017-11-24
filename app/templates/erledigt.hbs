@@ -1,0 +1,8 @@
+{{!-- model din die aufgaben der application--}}
+<ul>
+    {{#each model as |aufgabe|}}
+        {{#if aufgabe.done}}
+            <li class="done" {{action "reset" aufgabe}}>{{aufgabe.title}}</li>
+        {{/if}}
+    {{/each}}
+</ul>

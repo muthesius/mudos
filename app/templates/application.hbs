@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<header>
+    MuDos
+</header>
 
-{{outlet}}
+<main>
+    {{liquid-outlet}}
+</main>
+
+<footer>
+    {{link-to "noch zu tun" "index"}}
+    {{link-to "erledigte Aufgaben" "erledigt"}}
+</footer>

@@ -1,0 +1,12 @@
+{{input type="text"
+    placeholder="Es gibt immer 'was zu tun'"
+    enter="createTodo"
+    value=aufgabenText}}
+
+<ul>
+{{#each model as |aufgabe|}}
+    {{#unless aufgabe.done}}
+    <li {{action "erledigen" aufgabe}}>{{aufgabe.title}}</li>
+    {{/unless}}
+{{/each}}
+</ul>
