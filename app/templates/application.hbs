@@ -1,12 +1,10 @@
-<header>
-    MuDos
-</header>
+<h1>MuDos</h1>
 
 <main>
-    {{liquid-outlet}}
+    {{outlet}}
 </main>
 
 <footer>
-    {{link-to "noch zu tun" "index"}} ({{model.offene.length}})
-    {{link-to "erledigte Aufgaben" "erledigt"}}  ({{numDone}})
+    {{link-to "noch zu tun" "index"}}
+    {{link-to "erledigte" "erledigt"}}
 </footer>

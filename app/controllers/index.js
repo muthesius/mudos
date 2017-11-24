@@ -1,27 +1,21 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
 
-export default Ember.Controller.extend({
-    aufgabenText: null,
+export default Controller.extend({
     actions: {
-        // wird aufgerufen, wenn Enter gedrückt wird
         createTodo(text) {
             const title = text.trim();
             if (title === "") {
                 return;
             }
-
             let aufgabe = this.store.createRecord('mudo', {
-                title: title,
-                done: false
+                title, done: false
             });
             aufgabe.save();
-
             this.set('aufgabenText', null);
         },
 
         erledigen(aufgabe) {
             aufgabe.set('done', true);
-            aufgabe.save();
         }
     }
 });
