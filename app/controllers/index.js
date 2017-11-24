@@ -7,11 +7,10 @@ export default Controller.extend({
             if (title === "") {
                 return;
             }
-            let model = this.get('model');
-            let aufgabe = Ember.Object.create({
+            let aufgabe = this.store.createRecord('mudo', {
                 title, done: false
             });
-            model.unshiftObject(aufgabe);
+            aufgabe.save();
             this.set('aufgabenText', null);
         },
 
