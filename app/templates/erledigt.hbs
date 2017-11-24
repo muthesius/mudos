@@ -1,0 +1,9 @@
+<ul>
+    {{#each model as |aufgabe|}}
+        {{#if aufgabe.done}}
+            <li {{action "erledigen" aufgabe}} class="done">
+                {{aufgabe.title}}
+            </li>
+        {{/if}}
+    {{/each}}
+</ul>

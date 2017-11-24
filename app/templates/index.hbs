@@ -1,0 +1,12 @@
+{{input type="text"
+        placeholder="..."
+        enter="createTodo"
+        value=aufgabenText}}
+<ul>
+    {{!-- {{model.length}} --}}
+    {{#each model as |aufgabe|}}
+        {{#unless aufgabe.done}}
+            <li {{action "erledigen" aufgabe}}>{{aufgabe.title}}</li>
+        {{/unless}}
+    {{/each}}
+</ul>
